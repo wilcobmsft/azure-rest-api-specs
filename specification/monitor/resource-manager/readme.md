@@ -44,7 +44,7 @@ input-file:
 - microsoft.insights/stable/2016-03-01/logProfiles_API.json
 - microsoft.insights/preview/2017-05-01-preview/diagnosticsSettings_API.json
 - microsoft.insights/preview/2017-05-01-preview/diagnosticsSettingsCategories_API.json
-- microsoft.insights/stable/2017-04-01/actionGroups_API.json
+- microsoft.insights/stable/2018-03-01/actionGroups_API.json
 - microsoft.insights/stable/2017-04-01/activityLogAlerts_API.json
 - microsoft.insights/stable/2015-04-01/activityLogs_API.json
 - microsoft.insights/stable/2015-04-01/eventCategories_API.json
@@ -121,6 +121,16 @@ go:
 ``` yaml $(go) && $(multiapi)
 batch:
   - tag: package-2017-08
+  - tag: package-2017-09
+```
+
+### Tag: package-2017-09 and go
+
+These settings apply only when `--tag=package-2017-09 --go` is specified on the command line.
+Please also specify `--go-sdk-folder=<path to the root directory of your azure-sdk-for-go clone>`.
+
+``` yaml $(tag) == 'package-2017-09' && $(go)
+output-folder: $(go-sdk-folder)/services/monitor/mgmt/2018-03-01/insights
 ```
 
 ### Tag: package-2017-08 and go
